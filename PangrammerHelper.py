@@ -26,6 +26,7 @@ Add support for non-ASCII characters
 
 import vanilla
 import string
+from AppKit import NSFont
 from mojo.UI import CurrentSpaceCenter
 
 alphabetSetMixed = string.ascii_letters
@@ -55,6 +56,9 @@ class PangrammerHelper(object):
         self.w.checkBox = vanilla.CheckBox(
             (15, 110, -15, 20), "Mixed case",
             callback=self.checkBoxCallback, value=True)
+
+        self.w.pangramEditor.getNSTextView().setFont_(
+            NSFont.userFixedPitchFontOfSize_(14))
         self.w.open()
         # set remaining letters and counter to reflect contents of text field
         self.textEditorCallback(self)
