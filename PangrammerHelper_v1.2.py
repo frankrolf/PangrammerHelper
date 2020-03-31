@@ -26,7 +26,7 @@ Add support for non-ASCII characters
 
 import vanilla
 import string
-from mojo.UI import *
+from mojo.UI import CurrentSpaceCenter
 
 alphabetSetMixed = string.ascii_letters
 alphabetSetLower = string.ascii_lowercase
