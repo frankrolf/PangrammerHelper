@@ -37,10 +37,10 @@ class PangrammerHelper(object):
 
     def __init__(self):
 
-        self.alphabetSet = alphabetSetMixed
+        self.alphabetSet = alphabetSetLower
 
         # set up window
-        self.w = vanilla.Window((400, 150), "Pangrammer Helper")
+        self.w = vanilla.Window((420, 150), "Pangrammer Helper")
         # set up remaining letters display
         self.w.alphabet = vanilla.TextBox((15, 15, -15, 20), self.alphabetSet)
         # set up text field, inserting Space Center text if available
@@ -52,14 +52,23 @@ class PangrammerHelper(object):
         self.w.pangramEditor = vanilla.TextEditor(
             (15, 40, -15, 70), pangram, callback=self.textEditorCallback)
         self.w.counter = vanilla.TextBox(
-            (-250, 110, -15, 20), "Pangram length: 0", alignment='right')
+            (-250, 112, -15, 20), "Pangram length: 0", alignment='right')
         self.w.checkBox = vanilla.CheckBox(
-            (15, 110, -15, 20), "Mixed case",
-            callback=self.checkBoxCallback, value=True)
+            (15, 110, -15, 20), "",
+            callback=self.checkBoxCallback, value=False)
+        self.w.checkBoxLabel = vanilla.TextBox(
+            # don’t know how to access the NSText of a Vanilla check box label
+            (32, 112, -15, 20), "Mixed case")
 
-        self.w.pangramEditor.getNSTextView().setFont_(
-            NSFont.userFixedPitchFontOfSize_(14))
+        # set the editor font to be monospaced, and the rest to be system font
+        monospace_font = NSFont.userFixedPitchFontOfSize_(12)
+        system_font = NSFont.systemFontOfSize_(12)
+        self.w.pangramEditor.getNSTextView().setFont_(monospace_font)
+        self.w.alphabet.getNSTextField().setFont_(system_font)
+        self.w.counter.getNSTextField().setFont_(system_font)
+        self.w.checkBoxLabel.getNSTextField().setFont_(system_font)
         self.w.open()
+
         # set remaining letters and counter to reflect contents of text field
         self.textEditorCallback(self)
 
