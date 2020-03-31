@@ -28,8 +28,8 @@ import vanilla
 import string
 from mojo.UI import *
 
-alphabetSetMixed = unicode(string.ascii_letters)
-alphabetSetLower = unicode(string.ascii_lowercase)
+alphabetSetMixed = string.ascii_letters
+alphabetSetLower = string.ascii_lowercase
 
 
 class PangrammerHelper(object):
@@ -73,7 +73,7 @@ class PangrammerHelper(object):
         self.w.alphabet.set(self.getRemainingLetters(pangram))
 
         # determine and display pangram length
-        self.w.counter.set("Pangram length: %d" % len(unicode(pangram)))
+        self.w.counter.set("Pangram length: %d" % len(pangram))
 
         # update Space Center text
         if CurrentSpaceCenter() is not None:
