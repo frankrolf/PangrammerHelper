@@ -1,6 +1,6 @@
 '''
 Pangrammer Helper
-By Mark Simonson, v. 1.1, March 13, 2012
+By Mark Simonson
 Thanks to Frederik Berlaen for help with hooking up to Space Center
 
 Simple Python version of a Flash/ActionScript "app" I first did in 2003:
@@ -13,11 +13,10 @@ Type in the window. The alphabet will shrink as you use up the letters.
 Current pangram length displayed at bottom. If you have a Space Center window
 open, its current text will be used and updated as you compose your pangram.
 
-Note: It doesn't do anything with spelled out glyph names (e.g., "/space"
-or "/exclam").
-      It's only designed to work with literal text you can type directly.
-      Non-alphabetic characters are not included in the count for
-      pangram length.
+Note:
+It doesn't do anything with spelled out glyph names (e.g., "/space" or
+"/exclam"). It's only designed to work with literal text you can type directly.
+Non-alphabetic characters are not included in the count for pangram length.
 
 Small update by Frank Grießhammer on June 12, 2014:
 Add support for mixed-case pangrams
