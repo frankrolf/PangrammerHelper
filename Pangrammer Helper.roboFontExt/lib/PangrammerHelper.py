@@ -19,8 +19,8 @@ It doesn't do anything with spelled out glyph names (e.g., "/space" or
 Non-alphabetic characters are not included in the count for pangram length.
 
 Small update by Frank Grießhammer on June 12, 2014:
-Add support for mixed-case pangrams
-Add support for non-ASCII characters
+- Add support for mixed-case pangrams
+- Add support for non-ASCII characters
 '''
 
 import vanilla
